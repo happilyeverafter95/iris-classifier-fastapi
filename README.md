@@ -12,7 +12,7 @@ The Iris dataset is a simple, yet popular dataset consisting of 150 observations
 Make sure you have Docker installed.
 
 1. Build the docker container using `docker build . -t iris`
-2. Generate the docker image using `docker -i -d -p 8080:5000 iris`
+2. Generate the docker image using `docker run -i -d -p 8080:5000 iris`
 
 The input is a JSON with the following fields:
 
@@ -26,5 +26,5 @@ Corresponding values are the measurements in cm.
 Example request:
 
 ```
-curl 'http://localhost:8080/classify_iris' -X POST -H 'Content-Type: application/json' -d '{"sepal_l": 5, "sepal_w": 2, "petal_l": 3, "petal_w": 4}'
+curl 'http://localhost:8080/iris/classify_iris' -X POST -H 'Content-Type: application/json' -d '{"sepal_l": 5, "sepal_w": 2, "petal_l": 3, "petal_w": 4}'
 ```
