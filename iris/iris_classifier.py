@@ -21,4 +21,4 @@ class IrisClassifier:
         X = [features['sepal_l'], features['sepal_w'], features['petal_l'], features['petal_w']]
         prediction = self.clf.predict_proba([X])
         return {'class': self.iris_type[np.argmax(prediction)],
-                'probability': round(max(prediction), 2)}
+                'probability': round(max(prediction[0]), 2)}
