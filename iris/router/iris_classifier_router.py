@@ -6,6 +6,6 @@ router = APIRouter()
 
 
 @router.post('/classify_iris')
-def extract_name(iris_features):
+def extract_name(iris_features: dict):
     iris_classifier = IrisClassifier()
     return JSONResponse(iris_classifier.classify_iris(iris_features))

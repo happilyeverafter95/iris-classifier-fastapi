@@ -14,7 +14,8 @@ class IrisClassifier:
         }
 
     def train_model(self) -> LogisticRegression:
-        return LogisticRegression(solver='lbfgs', 
+        return LogisticRegression(solver='lbfgs',
+                                  max_iter=1000,
                                   multi_class='multinomial').fit(self.X, self.y)
 
     def classify_iris(self, features: dict):
