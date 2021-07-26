@@ -2,6 +2,8 @@ import numpy as np
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
 
+from iris.models import Iris
+
 
 class IrisClassifier:
     def __init__(self):
@@ -18,8 +20,8 @@ class IrisClassifier:
                                   max_iter=1000,
                                   multi_class='multinomial').fit(self.X, self.y)
 
-    def classify_iris(self, features: dict):
-        X = [features['sepal_l'], features['sepal_w'], features['petal_l'], features['petal_w']]
+    def classify_iris(self, iris: Iris):
+        X = [iris.sepal_length, iris.sepal_width, iris.petal_length, iris.petal_width]
         prediction = self.clf.predict_proba([X])
         return {'class': self.iris_type[np.argmax(prediction)],
                 'probability': round(max(prediction[0]), 2)}

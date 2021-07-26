@@ -11,8 +11,8 @@ The Iris dataset is a simple, yet popular dataset consisting of 150 observations
 
 Make sure you have Docker installed.
 
-1. Build the docker container using `docker build . -t iris`
-2. Generate the docker image using `docker run -i -d -p 8080:5000 iris`
+1. Build the docker image using `docker build . -t iris`
+2. Run the docker container using `docker run -i -d -p 8080:5000 iris`
 
 The input is a JSON with the following fields:
 
